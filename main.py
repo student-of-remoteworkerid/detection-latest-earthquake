@@ -1,9 +1,9 @@
 """
 Application Detection Latest Earthquake
 """
-import gempaterkini
+import earthquakelatest
 
 if __name__ == '__main__':
     print('My application')
-    result = gempaterkini.extraction_data()
-    gempaterkini.display_data(result)
+    result = earthquakelatest.extraction_data()
+    earthquakelatest.display_data(result)

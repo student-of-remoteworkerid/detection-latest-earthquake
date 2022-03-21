@@ -108,5 +108,5 @@ def display_data(result):
     '''
 """
 if __name__ == '__main__' :
-    print("Ini adalah package gempaterkini")
+    print("Ini adalah package earthquakelatest")
 """
