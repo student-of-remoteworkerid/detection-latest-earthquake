@@ -12,6 +12,8 @@ def extraction_data():
     Epicenter: Pusat gempa berada di laut 109 km Tenggara Kota Sukabumi
     perceived: Dirasakan (Skala MMI): II Singajaya, II Cidaun, II Agrabinta, II Cidora
     :return:
+
+
     """
     try:
         content = requests.get("https://bmkg.go.id")
@@ -50,6 +52,7 @@ def extraction_data():
                 perceived = res.text
             i += 1
 
+
         result = dict()
         result["date"] = date
         result["time"] = time
@@ -76,6 +79,33 @@ def display_data(result):
     print(f"Location: {result['location']}")
     print(f"Perceived: {result['perceived']}")
 
+    print()
+
+    print("Live Pers")
+
+    '''
+    try:
+        content = requests.get("https://bmkg.go.id")
+    except Exception:
+        return None
+    if content.status_code == 200:
+        soup = BeautifulSoup(content.text, 'html.parser')
+    result = soup.find_all('div', {'class': 'press-release-home-bg margin-bottom-20'})
+
+    for re in result:
+        image = re.find_all('img')
+        title = re.find_all('h3')
+        info = re.find_all('li')
+
+        for item_image in image:
+            print(f" - {item_image.get('src')}")
+
+        for item_title in title:
+            print(f" - {item_title.text}")
+
+        for item_info in info:
+            print(f" - {item_info.text}")
+    '''
 """
 if __name__ == '__main__' :
     print("Ini adalah package gempaterkini")
